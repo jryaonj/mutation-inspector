@@ -1,0 +1,44 @@
+{
+  "project": "mutation-inspector",
+  "handoffVersion": 1,
+  "generatedAt": "2026-05-24",
+  "defaultAgentMode": "implementation",
+  "currentStatus": {
+    "branch": "master",
+    "commitState": "pre-initial-commit at generation time",
+    "appType": "Vite React SPA",
+    "mainFiles": [
+      "main.jsx",
+      "mutationData.js",
+      "index.jsx",
+      "index.html",
+      "package.json",
+      ".github/workflows/deploy.yml"
+    ]
+  },
+  "workingRules": {
+    "preserveUserData": true,
+    "preferSmallScopedEdits": true,
+    "useApplyPatchForManualEdits": true,
+    "doNotCommit": [
+      "node_modules/",
+      "dist/",
+      ".vite/",
+      ".env*"
+    ]
+  },
+  "uiExpectations": [
+    "Entry stage selector wraps instead of using a horizontal scrolling frame.",
+    "Stage selector supports multi-select; empty selection means all.",
+    "Entry highlights must match matrix markers.",
+    "Marker pills should use tag-corresponding colors, not all red.",
+    "Display terminology must use 原发 and 继发.",
+    "Phenomenon selections should render related chain diagrams.",
+    "Literature links should resolve to DOI or source URLs, not generic search pages."
+  ],
+  "verification": {
+    "devServer": "curl -I --max-time 3 http://localhost:5173/",
+    "build": "npm run build",
+    "bundleCheck": "npx --yes esbuild main.jsx --bundle --format=esm --outfile=/tmp/mutation-inspector-check.js --external:react --external:framer-motion --external:lucide-react --log-level=warning"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "project": {
+    "name": "mutation-inspector",
+    "type": "vite-react-spa",
+    "status": "initial implementation ready",
+    "generatedAt": "2026-05-24",
+    "workspace": "/home/yaoruijie/workplace/mutation-inspector",
+    "branch": "master"
+  },
+  "entrypoints": {
+    "html": "index.html",
+    "reactMount": "index.jsx",
+    "app": "main.jsx",
+    "data": "mutationData.js",
+    "deployWorkflow": ".github/workflows/deploy.yml"
+  },
+  "commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "bundleCheck": "npx --yes esbuild main.jsx --bundle --format=esm --outfile=/tmp/mutation-inspector-check.js --external:react --external:framer-motion --external:lucide-react --log-level=warning"
+  },
+  "runtime": {
+    "devServer": "http://localhost:5173/",
+    "devHost": "0.0.0.0",
+    "nodeTarget": "22 in GitHub Actions"
+  },
+  "features": [
+    "Five-stage mutation matrix explorer",
+    "Wrapped action/object stage filter chips with multi-select",
+    "No stage selection means show all entries",
+    "Entry highlight behavior aligned with explicit matrix markers",
+    "Marker and tag colors shared across entries, matrix cells, and chain diagrams",
+    "Phenomenon detail view with related entry chain drawings",
+    "Clickable related entry rows that re-highlight the matching entry",
+    "Paper panels using explicit DOI or URL links only",
+    "UI terminology normalized to 原发 / 继发"
+  ],
+  "dataNotes": {
+    "paperEntries": "61 unique DOI-backed entries in mutationData.js at generation time",
+    "phenomena": "21 phenomenon records with related entry rows",
+    "paperLinkPolicy": "Do not use generic Google Scholar query URLs as final literature links; prefer journal, PMID, PMCID, DOI, or other source URLs."
+  },
+  "ignorePolicy": [
+    "node_modules/",
+    "dist/",
+    ".vite/",
+    "local environment files and logs"
+  ]
+}

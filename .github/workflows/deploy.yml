@@ -1,0 +1,54 @@
+# .github/workflows/deploy.yml
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write  # maybe too loosen
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # env:
+    #   SUBDIR: mutation-inspector
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. Node (pick a real version)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22          # or 20 for LTS
+      #     cache: npm               # enable pnpm store cache
+
+      # # 2. pnpm (puts it on PATH)
+      # - uses: pnpm/action-setup@v4
+      #   with:
+      #     version: 9                # exact or range (^9, 9.x, latest…)
+
+      # 3. Install deps
+      - run: npm install
+
+      # 4. Build
+      # vite build outputs to dist by default
+      # - run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
+      - run: npm run build -- --base=/${{ github.event.repository.name }}/
+
+      # 5. Configure Pages metadata (required by Pages deployments)
+      - uses: actions/configure-pages@v5   # current major version
+
+      # 6. Deploy
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          destination_dir: .
+          force_orphan: true
