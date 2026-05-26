@@ -8,6 +8,8 @@ This repository is an initial Vite/React mutation-inspector SPA. The UI was gene
 
 - `main.jsx`: UI state, filtering, highlighting, chain diagrams, paper rendering.
 - `mutationData.js`: matrix rows, phenomenon rows, DOI-backed paper strings.
+- `README.md` / `README.zh_CN.md`: project documentation in English and Chinese.
+- `LICENSE`: MIT license.
 - `index.jsx`: React mount.
 - `index.html`: Vite shell.
 - `.github/workflows/deploy.yml`: GitHub Pages deployment.
@@ -21,6 +23,7 @@ This repository is an initial Vite/React mutation-inspector SPA. The UI was gene
 - `源发 / 寄发` may exist in raw data, but UI text should display `原发 / 继发`.
 - Paper links should point to DOI/source URLs only; do not use generic `scholar.google.com?q=...` links.
 - The 21 phenomenon records need visible related-entry chain drawings.
+- UI chrome supports `en_US` and `zh_CN`; avoid machine-translating the raw biological source data without review.
 
 ## Recommended Checks
 

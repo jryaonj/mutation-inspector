@@ -12,6 +12,9 @@
     "reactMount": "index.jsx",
     "app": "main.jsx",
     "data": "mutationData.js",
+    "readme": "README.md",
+    "readmeZhCn": "README.zh_CN.md",
+    "license": "LICENSE",
     "deployWorkflow": ".github/workflows/deploy.yml"
   },
   "commands": {
@@ -34,7 +37,8 @@
     "Phenomenon detail view with related entry chain drawings",
     "Clickable related entry rows that re-highlight the matching entry",
     "Paper panels using explicit DOI or URL links only",
-    "UI terminology normalized to 原发 / 继发"
+    "UI terminology normalized to 原发 / 继发",
+    "UI chrome internationalized for en_US and zh_CN"
   ],
   "dataNotes": {
     "paperEntries": "61 unique DOI-backed entries in mutationData.js at generation time",

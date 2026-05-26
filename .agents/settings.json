@@ -5,11 +5,14 @@
   "defaultAgentMode": "implementation",
   "currentStatus": {
     "branch": "master",
-    "commitState": "pre-initial-commit at generation time",
+    "commitState": "initial commit exists; docs and i18n changes are currently in the worktree",
     "appType": "Vite React SPA",
     "mainFiles": [
       "main.jsx",
       "mutationData.js",
+      "README.md",
+      "README.zh_CN.md",
+      "LICENSE",
       "index.jsx",
       "index.html",
       "package.json",
@@ -34,7 +37,8 @@
     "Marker pills should use tag-corresponding colors, not all red.",
     "Display terminology must use 原发 and 继发.",
     "Phenomenon selections should render related chain diagrams.",
-    "Literature links should resolve to DOI or source URLs, not generic search pages."
+    "Literature links should resolve to DOI or source URLs, not generic search pages.",
+    "UI chrome should remain localized for en_US and zh_CN; raw biological data can stay in source form unless reviewed translations are added."
   ],
   "verification": {
     "devServer": "curl -I --max-time 3 http://localhost:5173/",

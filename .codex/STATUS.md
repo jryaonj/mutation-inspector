@@ -20,6 +20,8 @@ Generated: 2026-05-24
 - The 21 phenomenon records have related entry chain drawings, not only text.
 - Related entries in the right-side detail area are clickable and can re-highlight their entry.
 - Literature links resolve from explicit URLs or DOI links; generic Scholar query fallbacks are intentionally avoided.
+- UI chrome supports `en_US` and `zh_CN` language switching.
+- Project docs are available in `README.md` and `README.zh_CN.md`; license is MIT.
 
 ## Validation Commands
 
@@ -35,3 +37,4 @@ npx --yes esbuild main.jsx --bundle --format=esm --outfile=/tmp/mutation-inspect
 - Do not reintroduce horizontal scrolling for the action/object entry filter.
 - When adding literature references, prefer DOI, PMID/PMCID, journal pages, or source URLs over search-result URLs.
 - If matrix marker semantics change, update `classifyCell` and the stage tone map together.
+- Keep biological source data separate from UI i18n unless a reviewed scientific translation is added.
